@@ -37,3 +37,30 @@ Key Metrics:
 2. Which products generate the most revenue?
 3. Which traffic sources generate the highest conversion rates?
 4. What does customer retention look like over time?
+
+## Table Grains
+
+### FACT_EVENTS
+
+Grain:
+One row per user event.
+
+### FACT_PURCHASES
+
+Grain:
+One row per purchased item.
+
+### DIM_USERS
+
+Grain:
+One row per unique user.
+
+### DIM_PRODUCTS
+
+Grain:
+One row per unique product.
+
+### DIM_DATES
+
+Grain:
+One row per calendar date.
