@@ -19,3 +19,5 @@ Analytics Engineering project using Snowflake, dbt, and GA4 ecommerce event data
 - Git
 - GitHub
 - BigQuery
+
+Due to BigQuery Sandbox export limitations, a representative subset of event-level data was loaded into Snowflake for modeling. Product, user, and purchase source tables were fully loaded.
