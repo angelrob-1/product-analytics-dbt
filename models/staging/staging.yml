@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "Standardized product records from the raw GA4 ecommerce product source."
+
+    columns:
+      - name: item_id
+        description: "Identifier associated with the product or tracked item."
+
+      - name: item_name
+        description: "Name associated with the product."
+
+      - name: item_brand
+        description: "Brand associated with the product."
+
+      - name: item_category
+        description: "Category path associated with the product."
+
+      - name: price
+        description: "Recorded product price."
+  - name: stg_users
+    description: "Standardized user geography and device attributes from the raw GA4 ecommerce user source."
+
+    columns:
+      - name: user_pseudo_id
+        description: "Anonymous identifier assigned to the user."
+
+      - name: country
+        description: "Country associated with the user."
+
+      - name: region
+        description: "Region associated with the user."
+
+      - name: city
+        description: "City associated with the user."
+
+      - name: device_category
+        description: "Device category used by the user, such as desktop or mobile."
+
+      - name: operating_system
+        description: "Operating system associated with the user's device."
+
+  - name: stg_purchases
+    description: "Standardized GA4 purchase line items with consistent identifiers and date formatting."
+
+    columns:
+      - name: event_date
+        description: "Date on which the purchase event occurred."
+        data_tests:
+          - not_null
+
+      - name: event_timestamp
+        description: "Timestamp associated with the purchase event."
+
+      - name: transaction_id
+        description: "Identifier for the purchase transaction."
+        data_tests:
+          - not_null
+
+      - name: user_pseudo_id
+        description: "Anonymous identifier for the user associated with the purchase."
+
+      - name: item_id
+        description: "Product identifier associated with the purchased line item."
+        data_tests:
+          - not_null
+
+      - name: item_name
+        description: "Name of the purchased product."
+
+      - name: item_category
+        description: "Category associated with the purchased product."
+
+      - name: quantity
+        description: "Number of units purchased for the line item."
+
+      - name: item_revenue
+        description: "Revenue attributed to the individual purchased line item."
+
+      - name: purchase_revenue
+        description: "Total revenue associated with the purchase event."
+
+  

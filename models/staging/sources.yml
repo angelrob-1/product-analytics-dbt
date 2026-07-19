@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: PRODUCT_ANALYTICS_DBT
+    schema: RAW
+
+    tables:
+      - name: DIM_PRODUCTS_SOURCE
+
+      - name: DIM_USERS_SOURCE
+
+      - name: FACT_PURCHASES_SOURCE
+
+      - name: FACT_EVENTS_SOURCE
