@@ -78,6 +78,10 @@ MART
 └── mart_product_performance
 ```
 
+## Project Lineage
+
+![dbt Lineage](images/dbt-lineage.png)
+
 ---
 
 ## Data Modeling Approach
