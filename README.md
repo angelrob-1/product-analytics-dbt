@@ -1,5 +1,9 @@
 # Product Analytics Engineering with dbt & Snowflake
 
+![dbt](https://img.shields.io/badge/dbt-Built-success)
+![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Warehouse-blue)
+![SQL](https://img.shields.io/badge/SQL-Analytics%20Engineering-green)
+
 ## Overview
 
 This project demonstrates a modern Analytics Engineering workflow by transforming raw Google Analytics 4 (GA4) ecommerce data into a business-ready **Product Performance Mart** using **Snowflake**, **dbt**, and **SQL**.
