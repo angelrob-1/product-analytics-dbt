@@ -1,4 +1,4 @@
-# Product Analytics Engineering with dbt & Snowflake
+# Product Analytics Engineering Pipeline | dbt + Snowflake
 
 ![dbt](https://img.shields.io/badge/dbt-Built-success)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Warehouse-blue)
@@ -6,9 +6,9 @@
 
 ## Overview
 
-This project demonstrates a modern Analytics Engineering workflow by transforming raw Google Analytics 4 (GA4) ecommerce data into a business-ready **Product Performance Mart** using **Snowflake**, **dbt**, and **SQL**.
+This project transforms raw Google Analytics 4 (GA4) ecommerce data into a business-ready **Product Performance Mart** using **Snowflake**, **dbt**, and **SQL**.
 
-Following a layered data modeling approach, the project standardizes raw source data, applies reusable business transformations, and produces a reporting-ready analytics model supported by automated testing, documentation, and version control.
+The project follows modern analytics engineering best practices by organizing transformations into staging, intermediate, and mart layers while incorporating automated testing, documentation, and version control.
 
 ---
 
@@ -27,7 +27,7 @@ Rather than querying raw ecommerce event data, this project creates a reusable a
 
 ## Project Objectives
 
-This project was designed to:
+This project demonstrates the ability to:
 
 - Build an end-to-end analytics engineering workflow
 - Implement layered dbt modeling (Staging → Intermediate → Mart)
@@ -53,7 +53,8 @@ Due to BigQuery Sandbox export limitations, a representative subset of GA4 event
 | **Snowflake** | Cloud data warehouse |
 | **dbt Fusion** | Data transformation and modeling |
 | **SQL** | Data modeling |
-| **Git & GitHub** | Version control |
+| **Git** | Version control |
+| **GitHub** | Repository hosting and collaboration |
 
 ---
 
@@ -82,9 +83,11 @@ MART
 └── mart_product_performance
 ```
 
-## Project Lineage
+## dbt Lineage
 
 ![dbt Lineage](images/dbt-lineage.png)
+
+The lineage graph illustrates how raw source tables flow through the staging, intermediate, and mart layers to produce the final Product Performance Mart.
 
 ---
 
@@ -157,7 +160,7 @@ This project implements automated data quality testing using dbt.
 
 ### Custom Test
 
-- Validates that product revenue values are never negative.
+- Ensures calculated product revenue values are never negative.
 
 The project successfully passes a full:
 
@@ -165,7 +168,7 @@ The project successfully passes a full:
 dbt build
 ```
 
-which builds all models and executes every data quality test.
+which builds all models and executes automated data quality tests to validate the pipeline end-to-end.
 
 ---
 
@@ -222,9 +225,12 @@ models/
 ├── intermediate/
 └── marts/
 
+images/
 tests/
 macros/
+
 dbt_project.yml
+packages.yml
 README.md
 ```
 
@@ -232,16 +238,12 @@ README.md
 
 ## Lessons Learned
 
-This project strengthened my understanding of modern Analytics Engineering practices, including layered data modeling, reusable transformations, automated testing, YAML documentation, and Git workflows.
+Building this project reinforced core Analytics Engineering principles, including layered data modeling, modular SQL development, automated testing, documentation, and version control.
 
-Building the project from raw source data through a production-ready mart reinforced the importance of designing maintainable, well-documented data models that can support future business needs.
+It also strengthened my understanding of designing reusable data models that are scalable, maintainable, and ready for downstream analytics and reporting.
 
 ---
 
-## Author
+## License
 
-**Angelique Robinson**
-
-Data Analyst | Analytics Engineering Portfolio
-
-GitHub: https://github.com/angelrob-1
+This project is intended for educational and portfolio purposes.
