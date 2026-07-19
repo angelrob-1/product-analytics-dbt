@@ -25,18 +25,6 @@ Rather than querying raw ecommerce event data, this project creates a reusable a
 
 ---
 
-## Project Objectives
-
-This project demonstrates the ability to:
-
-- Build an end-to-end analytics engineering workflow
-- Implement layered dbt modeling (Staging → Intermediate → Mart)
-- Transform raw ecommerce data into reusable business models
-- Apply automated testing and documentation
-- Create a business-ready Product Performance Mart
-
----
-
 ## Dataset
 
 This project uses the **Google Analytics 4 (GA4) Ecommerce public dataset**.
@@ -110,6 +98,8 @@ Responsibilities include:
 - Renaming columns
 - Preparing data for downstream transformations
 
+While `stg_users` is not used in the current Product Performance Mart, it was included to demonstrate staging of user data as part of a complete analytics engineering workflow.
+
 ---
 
 ### Intermediate Layer
@@ -148,9 +138,9 @@ Key metrics include:
 
 ---
 
-## Data Quality
+## Data Quality & Documentation
 
-This project implements automated data quality testing using dbt.
+This project implements automated data quality testing using dbt to ensure the integrity of the data pipeline.
 
 ### Built-in Tests
 
@@ -170,17 +160,7 @@ dbt build
 
 which builds all models and executes automated data quality tests to validate the pipeline end-to-end.
 
----
-
-## Documentation
-
-The project includes comprehensive dbt documentation using YAML files for:
-
-- Model descriptions
-- Column descriptions
-- Data quality tests
-
-Documentation is generated using:
+The project also includes comprehensive YAML documentation for models, columns, and data tests.
 
 ```bash
 dbt docs generate
@@ -201,38 +181,6 @@ dbt docs generate
 - YAML Documentation
 - Git Feature Branch Workflow
 - Pull Requests & Code Review
-
----
-
-## Future Enhancements
-
-Potential future improvements include:
-
-- Customer-level analytics
-- Product category performance reporting
-- Conversion funnel modeling
-- Behavioral event analysis
-- Incremental models
-- Customer retention metrics
-
----
-
-## Repository Structure
-
-```
-models/
-├── staging/
-├── intermediate/
-└── marts/
-
-images/
-tests/
-macros/
-
-dbt_project.yml
-packages.yml
-README.md
-```
 
 ---
 
