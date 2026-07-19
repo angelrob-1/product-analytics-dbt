@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: int_product_sales
+    description: "One row per purchased product line item enriched with product attributes."
+
+    columns:
+      - name: item_id
+        description: "Product identifier associated with the purchased line item."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: "{{ ref('int_products_deduped') }}"
+                field: item_id
+
+      - name: transaction_id
+        description: "Identifier for the purchase transaction."
+        tests:
+          - not_null
+
+      - name: user_pseudo_id
+        description: "Anonymous user identifier associated with the purchase."
+        tests:
+          - not_null

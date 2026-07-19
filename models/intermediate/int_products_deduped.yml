@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: int_products_deduped
+    description: "One row per product, retaining the most specific available product category."
+
+    columns:
+      - name: item_id
+        description: "Unique identifier for the product."
+        tests:
+          - unique
+          - not_null
+
+      - name: item_name
+        description: "Name of the product."
+
+      - name: item_brand
+        description: "Brand associated with the product."
+
+      - name: item_category
+        description: "Most specific available category path associated with the product."
+
+      - name: price
+        description: "Recorded product price from the source data."
